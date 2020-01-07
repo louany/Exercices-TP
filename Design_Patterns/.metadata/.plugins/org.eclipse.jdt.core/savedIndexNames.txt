@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Users\Utilisateur\Desktop\My Digital School\TP\Exercices-TP\Design Patterns\.metadata\.plugins\org.eclipse.jdt.core
+3085819892.index
+4210876544.index
