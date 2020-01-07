@@ -1,0 +1,19 @@
+package fr.builderTP.model;
+
+public abstract class ColdDrink implements Item{
+	
+	
+	protected String name;
+	protected float price;
+	protected Packing packing;
+	
+	public String name() {
+		return "Coke";
+	}
+	public float price() {
+		return (float) 2.5;
+	}
+	
+	
+	
+}

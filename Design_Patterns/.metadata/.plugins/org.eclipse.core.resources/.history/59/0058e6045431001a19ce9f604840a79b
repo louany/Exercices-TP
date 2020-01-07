@@ -1,0 +1,9 @@
+package fr.builderTP.model;
+
+public class Coke {
+
+	public String name(){
+		return this.name = "Coke";
+	}
+	
+}

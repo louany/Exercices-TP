@@ -1,0 +1,14 @@
+package fr.builderTP.model;
+
+public class VegBurger extends Burger{
+	
+	@Override
+	public String name() {
+		return this.name = "VegBurger";
+	}
+
+	@Override
+	public float price() {
+		return 0;
+	}
+}

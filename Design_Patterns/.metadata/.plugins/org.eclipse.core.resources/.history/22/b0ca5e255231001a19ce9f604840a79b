@@ -1,0 +1,14 @@
+package fr.builderTP.model;
+
+
+public abstract class Burger implements Item{
+	
+	private String name;
+	private float price;
+	private Packing packing;
+	
+	@Override
+	public String toString() {
+		return "Un burger " + name
+	}	
+}

@@ -1,0 +1,6 @@
+package fr.builderTP.model;
+
+public class Wrapper implements Packing{
+	
+	
+}

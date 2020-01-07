@@ -1,0 +1,22 @@
+package fr.builderTP.model;
+
+public class Coke extends ColdDrink{
+
+	@Override
+	public String name() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Packing packing() {
+		return this.packing();
+	}
+
+	@Override
+	public float price() {
+		return 0;
+	}
+
+
+}

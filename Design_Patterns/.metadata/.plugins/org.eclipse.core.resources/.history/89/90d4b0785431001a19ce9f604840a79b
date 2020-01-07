@@ -1,0 +1,21 @@
+package fr.builderTP.model;
+
+public class Coke extends ColdDrink{
+
+	@Override
+	public String name() {
+		return this.name = "Coke";
+	}
+
+	@Override
+	public Packing packing() {
+		return this.packing();
+	}
+
+	@Override
+	public float price() {
+		return ;
+	}
+
+
+}

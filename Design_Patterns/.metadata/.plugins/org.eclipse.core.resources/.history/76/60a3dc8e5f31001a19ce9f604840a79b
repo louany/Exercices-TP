@@ -1,0 +1,18 @@
+package fr.builderTP;
+
+import fr.builderTP.model.Meal;
+
+public class MealBuilder {
+	
+	public Meal prepareVegMeal() {
+		
+	}
+	
+	public Meal prepareNonVegMeal() {
+		
+	}
+	
+	public Item addItem(Item Item) {
+		
+	}
+}

@@ -1,0 +1,10 @@
+package fr.builderTP.model;
+
+public interface Item {
+
+	public String name;
+	public Packing packing;
+	public Double price;
+	
+	
+}

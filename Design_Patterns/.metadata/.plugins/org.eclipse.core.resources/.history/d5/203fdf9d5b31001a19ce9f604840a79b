@@ -1,0 +1,15 @@
+package fr.builderTP.model;
+
+public interface Item {
+	
+	private String name() {
+		return null;
+	}
+	private Packing packing() {
+		return null;
+	}
+	private float price() {
+		return 0;
+	}
+	
+}

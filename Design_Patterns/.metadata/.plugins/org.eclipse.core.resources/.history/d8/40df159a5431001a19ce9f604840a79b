@@ -1,0 +1,24 @@
+package fr.builderTP.model;
+
+public class Pepsi extends ColdDrink{
+
+	@Override
+	public String name() {
+		return this.name = "Pepsi";
+	}
+
+	@Override
+	public Packing packing() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public float price() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
+		
+}

@@ -1,0 +1,9 @@
+package fr.builderTP.model;
+
+public interface Item {
+	
+	private abstract String name();
+	private abstarct Packing packing();
+	private float price();
+	
+}

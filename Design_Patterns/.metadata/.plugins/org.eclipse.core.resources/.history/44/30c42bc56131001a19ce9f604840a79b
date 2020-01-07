@@ -1,0 +1,34 @@
+package fr.builderTP;
+
+import fr.builderTP.model.ChickenBurger;
+import fr.builderTP.model.Coke;
+import fr.builderTP.model.Item;
+import fr.builderTP.model.Meal;
+import fr.builderTP.model.Pepsi;
+import fr.builderTP.model.VegBurger;
+
+public class MealBuilder {
+
+	
+	public MealBuilder prepareVegMeal() {
+		MealBuilder mealbuilder = new MealBuilder();
+		mealbuilder.addItem(new VegBurger());
+		mealbuilder.addItem(new Pepsi());
+		return this;
+	}
+	
+	public MealBuilder prepareNonVegMeal() {
+		MealBuilder mealbuilder = new MealBuilder();
+		mealbuilder.addItem(new ChickenBurger());
+		mealbuilder.addItem(new Coke());
+		return this;
+	}
+	
+	public MealBuilder addItem(Item Item) {
+		
+	}
+	
+	public Meal Build() {
+		
+	}
+}

@@ -1,0 +1,26 @@
+package fr.builderTP.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Meal {
+	
+	private List<Item> itemList = new ArrayList<Item>();
+
+	
+	public void addItem(Item item) {
+		itemList.add(item);
+	}
+	
+	public float getCost() {
+		float cost;
+		for (Item i : itemList ) {
+			float cost = cost + i.price();
+		}
+		return cost;
+	}
+	
+	public void showItems() {
+		
+	}
+}

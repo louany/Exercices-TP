@@ -1,0 +1,5 @@
+package fr.builderTP.model;
+
+public class Bottle implements Packing{
+
+}

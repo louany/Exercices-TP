@@ -1,0 +1,11 @@
+package fr.builderTP.model;
+
+public class Meal {
+	
+	
+	public item addItem() {
+	
+	}
+	
+	public getCost()
+}

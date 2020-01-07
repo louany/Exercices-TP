@@ -1,0 +1,9 @@
+package fr.builderTP.model;
+
+public class Coke extends ColdDrink{
+
+	public String name(){
+		return this.name = "Coke";
+	}
+	
+}

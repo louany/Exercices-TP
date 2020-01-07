@@ -1,0 +1,17 @@
+package fr.builderTP.model;
+
+public class Meal {
+	
+	
+	public Item addItem() {
+		Item = new Item; 
+	}
+	
+	public float getCost() {
+		
+	}
+	
+	public void showItems() {
+		
+	}
+}

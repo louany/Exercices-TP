@@ -1,0 +1,13 @@
+package fr.builderTP.model;
+
+public class Bottle implements Packing{
+	
+	public Packing packing(){
+		return new Bottle();
+	}
+	
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+}

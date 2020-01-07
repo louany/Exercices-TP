@@ -1,0 +1,11 @@
+package fr.builderTP.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Burger implements Item{
+	
+	private String pain;
+	private String sauce;
+	private List<String> ingredients = new ArrayList();
+}

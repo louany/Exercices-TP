@@ -1,0 +1,36 @@
+package fr.builderTP.model;
+
+public abstract class ColdDrink implements Item{
+	
+	
+	private String name;
+	private float price;
+	private Packing packing;
+	
+	
+	@Override
+	public String toString() {
+		return "Un burger " + name;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public float getPrice() {
+		return price;
+	}
+	public void setPrice(float price) {
+		this.price = price;
+	}
+	public Packing getPacking() {
+		return packing;
+	}
+	public void setPacking(Packing packing) {
+		this.packing = packing;
+	}
+	
+	
+	
+}

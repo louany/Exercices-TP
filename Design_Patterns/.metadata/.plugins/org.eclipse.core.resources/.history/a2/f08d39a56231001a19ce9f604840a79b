@@ -1,0 +1,37 @@
+package fr.builderTP;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import fr.builderTP.model.ChickenBurger;
+import fr.builderTP.model.Coke;
+import fr.builderTP.model.Item;
+import fr.builderTP.model.Meal;
+import fr.builderTP.model.Pepsi;
+import fr.builderTP.model.VegBurger;
+
+public class MealBuilder {
+	
+	private List<Item> listItems = new ArrayList();
+	
+	public MealBuilder prepareVegMeal() {
+		this.addItem(new VegBurger());
+		this.addItem(new Pepsi());
+		return this;
+	}
+	
+	public MealBuilder prepareNonVegMeal() {
+		this.addItem(new ChickenBurger());
+		this.addItem(new Coke());
+		return this;
+	}
+	
+	public MealBuilder addItem(Item Item) {
+		this.listItems.add(Item);
+		return this;
+	}
+	
+	public Meal Build() {
+		
+	}
+}
