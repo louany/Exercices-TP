@@ -2,4 +2,17 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="fr.builderTP.BuilderPatternDemo"/>
     <fullyQualifiedTypeName name="java.lang.Void"/>
+    <fullyQualifiedTypeName name="fr.builderTP.model.Burger"/>
+    <fullyQualifiedTypeName name="fr.builderTP.model.Packing"/>
+    <fullyQualifiedTypeName name="fr.builderTP.model.ColdDrink"/>
+    <fullyQualifiedTypeName name="fr.builderTP.model.Item"/>
+    <fullyQualifiedTypeName name="fr.builderTP.model.VegBurger"/>
+    <fullyQualifiedTypeName name="fr.builderTP.model.Pepsi"/>
+    <fullyQualifiedTypeName name="fr.builderTP.model.ChickenBurger"/>
+    <fullyQualifiedTypeName name="fr.builderTP.model.Coke"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="fr.builderTP.MealBuilder"/>
+    <fullyQualifiedTypeName name="fr.builderTP.model.Meal"/>
+    <fullyQualifiedTypeName name="com.sun.tools.javac.jvm.Items"/>
 </qualifiedTypeNameHistroy>
