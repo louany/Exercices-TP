@@ -5,55 +5,61 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.tactfactory.monprojetsb.monprojetsb.entities.User;
+import com.tactfactory.monprojetsb.monprojetsb.repository.ProductRepository;
 import com.tactfactory.monprojetsb.monprojetsb.repository.UserRepository;
 
 @Controller
+@RequestMapping(value = "/user")
 public class UserController {
 	
-	@Autowired
-	private UserRepository userRepository;
+    @Autowired
+    private UserRepository userRepo;
+    private ProductRepository productRepo;
 
-	@RequestMapping(value = {"/index", "/"})
+    public UserController(UserRepository userRepository, ProductRepository productRepository) {
+        this.userRepo = userRepository;
+        this.productRepo = productRepository;
+    }
 
-	public String index(Model model) {
+    @RequestMapping(value = { "/index", "/" })
+    public String index(Model model) {
+        model.addAttribute("page", "User index");
+        model.addAttribute("items", userRepo.findAll());
+        return "user/index";
+    }
 
-	model.addAttribute("page", "Product index");
+    @GetMapping(value = {"/create"})
+    public String createGet(Model model) {
+        model.addAttribute("page", "User Create");
+        model.addAttribute("products", productRepo.findAll());
+        return "user/create";
+    }
 
-	model.addAttribute("items", userRepository.findAll());
+    @PostMapping(value = {"/create"})
+    public String createPost(@ModelAttribute User user) {
+        if (user != null) {
+        	userRepo.save(user);
+        }
+        return "redirect:index";
+    }
 
-	return "user/index";
+    @PostMapping(value = {"/delete"})
+    public String delete(Long id) {
+        User user = userRepo.getOne(id);
+        userRepo.delete(user);
+        return "redirect:index";
+    }
 
-	}
-	
-	@GetMapping(value = {"/create"})
-	public String createGet(Model model) {
+    @GetMapping(value = {"/show/{id}"})
+    public String details(Model model, @PathVariable(value = "id") String id) {
+        model.addAttribute("user", userRepo.getOne(Long.parseLong(id)));
+        model.addAttribute("items", userRepo.getOne(Long.parseLong(id)).getProducts());
+        return "user/detail";
+    }
 
-	model.addAttribute("page", "user create");
-
-	return "user/create";
-
-	}
-	
-	@PostMapping(value = {"/create"})
-	public String createPost(@ModelAttribute User user) {
-
-		if (user != null) {
-			userRepository.save(user);
-		}
-
-	return "redirect:index";
-
-	}
-	
-	public Object delete() {
-		return null;
-	}
-	
-	public Object details() {
-		return null;
-	}
 }
