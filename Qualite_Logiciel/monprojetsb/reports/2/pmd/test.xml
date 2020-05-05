@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
+    version="6.21.0" timestamp="2020-05-05T15:54:42.861">
+<file name="C:\Users\Utilisateur\Desktop\My Digital School\TP\Exercices-TP\Qualite_Logiciel\monprojetsb\src\test\java\com\tactfactory\monprojetsb\monprojetsb\services\UserServiceTest.java">
+<violation beginline="32" endline="32" begincolumn="25" endcolumn="35" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.tactfactory.monprojetsb.monprojetsb.services" class="UserServiceTest" variable="userService" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="35" endline="35" begincolumn="28" endcolumn="41" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.tactfactory.monprojetsb.monprojetsb.services" class="UserServiceTest" variable="userRepository" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="53" endline="53" begincolumn="47" endcolumn="56" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="com.tactfactory.monprojetsb.monprojetsb.services" class="UserServiceTest" method="TestInsertUser" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
+The String literal &quot;François&quot; appears 5 times in this file; the first occurrence is on line 53
+</violation>
+<violation beginline="53" endline="53" begincolumn="39" endcolumn="44" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="com.tactfactory.monprojetsb.monprojetsb.services" class="UserServiceTest" method="TestInsertUser" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
+The String literal &quot;Jean&quot; appears 5 times in this file; the first occurrence is on line 53
+</violation>
+</file>
+</pmd>
