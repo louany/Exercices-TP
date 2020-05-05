@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
+    version="6.21.0" timestamp="2020-05-05T15:54:40.495">
+<file name="C:\Users\Utilisateur\Desktop\My Digital School\TP\Exercices-TP\Qualite_Logiciel\monprojetsb\src\main\java\com\tactfactory\monprojetsb\monprojetsb\controller\ProductController.java">
+<violation beginline="20" endline="20" begincolumn="31" endcolumn="41" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.tactfactory.monprojetsb.monprojetsb.controller" class="ProductController" variable="productRepo" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+</file>
+<file name="C:\Users\Utilisateur\Desktop\My Digital School\TP\Exercices-TP\Qualite_Logiciel\monprojetsb\src\main\java\com\tactfactory\monprojetsb\monprojetsb\controller\UserController.java">
+<violation beginline="21" endline="21" begincolumn="28" endcolumn="35" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.tactfactory.monprojetsb.monprojetsb.controller" class="UserController" variable="userRepo" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="22" endline="22" begincolumn="31" endcolumn="41" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.tactfactory.monprojetsb.monprojetsb.controller" class="UserController" variable="productRepo" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+</file>
+<file name="C:\Users\Utilisateur\Desktop\My Digital School\TP\Exercices-TP\Qualite_Logiciel\monprojetsb\src\main\java\com\tactfactory\monprojetsb\monprojetsb\entities\User.java">
+<violation beginline="19" endline="19" begincolumn="31" endcolumn="38" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.tactfactory.monprojetsb.monprojetsb.entities" class="User" variable="products" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+</file>
+<file name="C:\Users\Utilisateur\Desktop\My Digital School\TP\Exercices-TP\Qualite_Logiciel\monprojetsb\src\main\java\com\tactfactory\monprojetsb\monprojetsb\services\ProductService.java">
+<violation beginline="10" endline="10" begincolumn="35" endcolumn="51" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.tactfactory.monprojetsb.monprojetsb.services" class="ProductService" variable="productRepository" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+</file>
+<file name="C:\Users\Utilisateur\Desktop\My Digital School\TP\Exercices-TP\Qualite_Logiciel\monprojetsb\src\main\java\com\tactfactory\monprojetsb\monprojetsb\services\UserService.java">
+<violation beginline="15" endline="15" begincolumn="32" endcolumn="45" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.tactfactory.monprojetsb.monprojetsb.services" class="UserService" variable="userRepository" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+</file>
+</pmd>
