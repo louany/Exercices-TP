@@ -18,7 +18,7 @@ public class UserService {
 		this.userRepository = userRepository;
 	}
 	
-    public User getOne(Long id) {
+    public User findById(Long id) {
         return this.userRepository.getOne(id);
     }
     
@@ -34,7 +34,7 @@ public class UserService {
 		return this.userRepository.findAll();
 	}
 	
-    public void saveList(List<User> users) {
+    public void saveAll(List<User> users) {
         for (User user : users) {
             user.setId(userRepository.save(user).getId());
         }
