@@ -6,43 +6,49 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.TestPropertySource;
 
+import com.tactfactory.monprojetsb.monprojetsb.MonprojetsbApplicationTests;
 import com.tactfactory.monprojetsb.monprojetsb.entities.Product;
 import com.tactfactory.monprojetsb.monprojetsb.entities.User;
+import com.tactfactory.monprojetsb.monprojetsb.mock.MockitoUserRepository;
 import com.tactfactory.monprojetsb.monprojetsb.repository.UserRepository;
 
-@RunWith(SpringRunner.class)
-@AutoConfigureTestDatabase(replace = Replace.NONE)
-@DataJpaTest
-@EntityScan(basePackages="com.tactfactory.monprojetsb.monprojetsb")
-@ComponentScan(basePackages="com.tactfactory.monprojetsb.monprojetsb")
+@ActiveProfiles("test")
+@TestPropertySource(locations = { "classpath:application-test.properties" })
+@SpringBootTest(classes = MonprojetsbApplicationTests.class)
 public class UserServiceTest {
 
     @Autowired
     private UserService userService;
 
-    @Autowired
+    @MockBean
     private UserRepository userRepository;
     
-    @Before
-    public void clear() {
-        this.userRepository.deleteAll();
-    }
+    private User entity;
+    
+//    @Before
+//    public void clear() {
+//        this.userRepository.deleteAll();
+//    }
 
+    @BeforeEach
+    public void setUp() throws Exception {
+      final MockitoUserRepository mock = new MockitoUserRepository(this.userRepository);
+      mock.intialize();
+      this.entity = mock.entity;
+    }
+    
     @Test // 1
     public void TestInsertOne() {
-        Long before = userRepository.count();// test 1
-        userService.save(new User());
+        Long before = userRepository.count();
+        userService.save(this.entity);
         Long after = userRepository.count();
 
         assertEquals(before + 1, after);
@@ -50,19 +56,18 @@ public class UserServiceTest {
 
     @Test // 2
     public void TestInsertUser() {
-        User userBase = new User( 5L, "Jean", "François", new ArrayList<Product>());
-        Long id = userService.save(userBase).getId();
-        User userFetch = userRepository.getOne(id);
-        assertEquals(userFetch.getFirstname(), userBase.getFirstname());
-        assertEquals(userFetch.getLastname(), userBase.getLastname());
-        assertEquals(userFetch.getProducts(), userBase.getProducts());
+        Long id = userService.save(this.entity).getId();
+        User userFetch = userRepository.findById(id).get();
+        assertEquals(userFetch.getFirstname(), this.entity.getFirstname());
+        assertEquals(userFetch.getLastname(), this.entity.getLastname());
+        assertEquals(userFetch.getProducts(), this.entity.getProducts());
     }
 
     @Test // 3
     public void TestUpdate() {
 //    	User userBase = new User(5L, "Jean", "François", new ArrayList<Product>());
 //        Long id = userService.save(userBase).getId();
-//        User userFetch = userRepository.getOne(id);
+//        User userFetch = userService.findById(id);
 //        userFetch = userService.save(userFetch);
 //        assertEquals(userFetch.getFirstname(), userBase.getFirstname());
 //        assertEquals(userFetch.getLastname(), userBase.getLastname());
@@ -71,12 +76,11 @@ public class UserServiceTest {
 
     @Test // 4
     public void TestGetUser() {
-		User userBase = new User(5L, "Jean", "François", new ArrayList<Product>());
-		Long id = userRepository.save(userBase).getId();
-		User userFetch = userRepository.getOne(id);
-		assertEquals(userFetch.getFirstname(), userBase.getFirstname());
-		assertEquals(userFetch.getLastname(), userBase.getLastname());
-		assertEquals(userFetch.getProducts(), userBase.getProducts());
+		Long id = userService.save(this.entity).getId();
+		User userFetch = userRepository.findById(id).get();
+		assertEquals(userFetch.getFirstname(), this.entity.getFirstname());
+		assertEquals(userFetch.getLastname(), this.entity.getLastname());
+		assertEquals(userFetch.getProducts(), this.entity.getProducts());
     }
 
     @Test // 5
@@ -89,7 +93,7 @@ public class UserServiceTest {
         users.add(user1);
         users.add(user2);
 
-        userService.saveList(users);
+        userService.saveAll(users);
 
         List<User> usersFetch = userService.findAll();
 
@@ -103,7 +107,7 @@ public class UserServiceTest {
 
     @Test // 6
     public void TestDeleteUser() {
-        User userTemp = new User();
+        User userTemp = this.entity;
         userService.save(userTemp);
         Long before = userRepository.count();
         userService.delete(userTemp);
